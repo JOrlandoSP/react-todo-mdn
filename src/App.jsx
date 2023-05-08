@@ -62,8 +62,8 @@ export default function App(props) {
             name={task.name}
             completed={task.completed}
             key={task.id}
-            toggleTaskCompleted={toggleTaskCompleted}
-            deleteTask={deleteTask}
+            toggleTaskCompleted={() => toggleTaskCompleted(task.id)}
+            deleteTask={() => deleteTask(task.id)}
             editTask={editTask}
             />
         )
@@ -92,7 +92,7 @@ export default function App(props) {
       if (tasks.length - prevTaskLength === -1) {
         listHeadingRef.current.focus();
       }
-    }, [tasks.length, prevTaskLength]);
+}, [tasks.length, prevTaskLength]);
 
 
   return (

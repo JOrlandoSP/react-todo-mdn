@@ -76,7 +76,7 @@ export default function Todo(props) {
               id={props.id}
               type="checkbox"
               defaultChecked={props.completed}
-              onChange={() => props.toggleTaskCompleted(props.id)}
+              onChange={props.toggleTaskCompleted}
             />
             <label className="todo-label" htmlFor={props.id}>
               {props.name}
@@ -93,7 +93,7 @@ export default function Todo(props) {
             <button
               type="button"
               className="btn btn__danger"
-              onClick={() => props.deleteTask(props.id)}
+              onClick={props.deleteTask}
             >
               Delete <span className="visually-hidden">{props.name}</span>
             </button>
